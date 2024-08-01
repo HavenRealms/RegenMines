@@ -8,28 +8,15 @@ import org.bukkit.Material;
 @AllArgsConstructor
 public class MineSequence {
 	private String name;
+	private String replace;
 	private String region;
-	private String[] sequence;
 	private double delay;
-
-	public Material[] getSequence() {
-		Material[] materials = new Material[sequence.length];
-		for (int i = 0; i < sequence.length; i++) {
-			materials[i] = Material.getMaterial(sequence[i].toUpperCase());
-		}
-		return materials;
+	
+	public Material getMaterial() {
+		return Material.getMaterial(name.toUpperCase());
 	}
 
-	public Material getNextMaterial(Material current) {
-		for (int i = 0; i < sequence.length; i++) {
-			if (Material.getMaterial(sequence[i].toUpperCase()) == current) {
-				return Material.getMaterial(sequence[(i + 1) % sequence.length].toUpperCase());
-			}
-		}
-		return Material.getMaterial(sequence[0].toUpperCase());
-	}
-
-	public Material getFirstMaterial() {
-		return getSequence()[0];
+	public Material getReplacementMaterial() {
+		return Material.getMaterial(replace.toUpperCase());
 	}
 }

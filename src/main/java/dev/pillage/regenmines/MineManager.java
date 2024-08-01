@@ -21,7 +21,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SequenceManager {
+public class MineManager {
 
 	@Getter
 	private static final List<MineSequence> sequences = new ArrayList<>();
@@ -46,20 +46,8 @@ public class SequenceManager {
 		config.getMapList("sequences").forEach(sequenceMap -> {
 			String name = (String) sequenceMap.get("name");
 			String region = (String) sequenceMap.get("region");
-			List<String> sequenceList = (List<String>) sequenceMap.get("sequence");
-			String[] sequence = sequenceList.toArray(new String[0]);
-
-			String[] newSequence = new String[sequence.length + 1];
-			System.arraycopy(sequence, 0, newSequence, 0, sequence.length);
-			newSequence[sequence.length] = "BEDROCK";
-
+			String replace = (String) sequenceMap.get("replace");
 			double delay = ((Number) sequenceMap.get("delay")).doubleValue();
-
-			MineSequence mineSequence = new MineSequence(name, region, newSequence, delay);
-			addSequence(mineSequence);
-
-			Material startMat = Material.getMaterial(sequence[0].toUpperCase());
-			startMappings.put(startMat, mineSequence);
 		});
 
 		Common.log("Loaded " + sequences.size() + " sequences.");
