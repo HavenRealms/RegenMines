@@ -4,13 +4,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <!-- Change to your own main package name. -->
-    <groupId>org.mineacademy</groupId>
+    <groupId>dev.pillage</groupId>
 
     <!-- Change to your plugin name, must be lower cased and match your end package name. No spaces. -->
-    <artifactId>plugintemplate</artifactId>
+    <artifactId>regenmines</artifactId>
 
     <!-- Change to your plugin's name. Can contain capital letters, but do NOT use spaces. -->
-    <name>PluginTemplate</name>
+    <name>RegenMines</name>
 
     <!-- Change to the appropriate plugin's version, starting at 1.0.0. -->
     <version>1.0.0</version>
@@ -21,10 +21,10 @@
     <properties>
 
         <!-- Change to your name or the main project author. -->
-        <author>kangarko</author>
+        <author>PillageDev</author>
 
         <!-- Change to the full path where your main plugin class is located. -->
-        <main.class>org.mineacademy.template.PluginTemplate</main.class>
+        <main.class>dev.pillage.regenmines.RegenMines</main.class>
 
         <!-- Change the Java version this plugin is built on.
 
@@ -87,6 +87,13 @@
             <artifactId>Foundation</artifactId>
             <version>${foundation.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.34</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <!-- DO NOT EDIT unless instructed to do so or you know what you're doing. -->
@@ -109,8 +116,8 @@
                      https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
                 <version>3.13.0</version>
                 <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
+                    <source>9</source>
+                    <target>9</target>
                 </configuration>
             </plugin>
             <plugin>
