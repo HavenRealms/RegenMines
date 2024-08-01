@@ -1,6 +1,7 @@
 package dev.pillage.regenmines.commands;
 
-import dev.pillage.regenmines.MineManager;
+import dev.pillage.regenmines.SequenceManager;
+import org.mineacademy.fo.annotation.AutoRegister;
 import org.mineacademy.fo.command.SimpleCommandGroup;
 import org.mineacademy.fo.command.SimpleSubCommand;
 
@@ -15,7 +16,7 @@ public final class ResetCommand extends SimpleSubCommand {
 	protected void onCommand() {
 		long start = System.currentTimeMillis();
 		tell("&cResetting sequences...");
-		MineManager.resetSequences();
+		SequenceManager.resetSequences();
 		tell("&aSequences reset in &e" + (System.currentTimeMillis() - start) + "ms");
 	}
 }

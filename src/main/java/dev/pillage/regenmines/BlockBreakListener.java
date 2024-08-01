@@ -13,9 +13,9 @@ public final class BlockBreakListener implements Listener {
 
 	@EventHandler
 	public void onBlockBreak(final BlockBreakEvent e) {
-		if (MineManager.isBypassing(e.getPlayer())) return;
+		if (SequenceManager.isBypassing(e.getPlayer())) return;
 
-		MineSequence sequence = MineManager.getSequence(e.getBlock().getLocation());
+		MineSequence sequence = SequenceManager.getSequence(e.getBlock().getLocation());
 
 		if (sequence != null) {
 			Material nextMaterial = sequence.getNextMaterial(e.getBlock().getType());
