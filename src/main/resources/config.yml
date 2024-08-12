@@ -1,17 +1,17 @@
-# Sequences
-sequences:
-  - name: "coal"
-    region: "coal-region"
-    sequence:
-      - COAL_ORE
-      - STONE
-      - COBBLESTONE
-    # Delay in seconds from bedrock -> first block
-    delay: 5
-  - name: "iron"
-    region: "coal-region"
-    sequence:
-      - IRON_ORE
-      - STONE
-      - COBBLESTONE
+# Blocks
+blocks:
+  coal_ore:
+    # Replace block
+    replace: stone
+    # Delay in seconds
+    delay: 300
+  stone:
+    replace: cobblestone
+    delay: 300
+  cobblestone:
+    replace: bedrock
     delay: 10
+
+regions:
+  - coalmine
+  - ironmine
